@@ -1,4 +1,4 @@
-
+// 새로운 class인 CartItem 파일 추가
 public class CartItem {
 	private String[]itemBook = new String[7];
 	private String bookID;
