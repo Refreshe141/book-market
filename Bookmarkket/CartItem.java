@@ -1,26 +1,53 @@
-// 새로운 class인 CartItem 파일 추가
+package com.market.cart;
+import com.market.bookitem.Book;
+
 public class CartItem {
-	private String[]itemBook = new String[7];
+	//private String[]itemBook = new String[7];
+	private Book itemBook;
 	private String bookID;
 	private int quantity;
 	private int totalPrice;
 	
+	
 	public CartItem() {
 		
+		
 	}
-	public CartItem(String[]book){
-		this.itemBook = book;
-		this.bookID = book[0];
+	//아내 내용 주석처리
+	//public CartItem(String[]book){
+		//this.itemBook = book;
+		//this.bookID = book[0];
+		//this.quantity = 1;
+		//updateTotalPrice();						
+	//}
+	
+	//public String[]getItemBook(){
+		//return itemBook;
+	//}
+	//public void setItemBook(String[]itemBook) {
+		//this.itemBook = itemBook;
+	//}
+	
+	//신규 코드 생성
+	public CartItem(Book booklist) {
+		this.itemBook = booklist;
+		this.bookID = booklist.getBookId();
 		this.quantity = 1;
-		updateTotalPrice();						
+		updateTotalPrice();
 	}
 	
-	public String[]getItemBook(){
+	public Book getItemBook() {
 		return itemBook;
 	}
-	public void setItemBook(String[]itemBook) {
+	
+	public void setItemBook(Book itemBook) {
 		this.itemBook = itemBook;
 	}
+	
+	public void setTotalPrice(int totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+	
 	public String getBookID() {
 		return bookID;
 	}
@@ -39,7 +66,9 @@ public class CartItem {
 		return totalPrice;
 	}
 	public void updateTotalPrice() {
-		totalPrice = Integer.parseInt(this.itemBook[2]) * this.quantity;
+//주석처리 totalPrice = Integer.parseInt(this.itemBook[2]) * this.quantity;
+		totalPrice = this.itemBook.getUnitPrice() * this.quantity;
+	
 	}
 	
 
