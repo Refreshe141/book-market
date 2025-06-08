@@ -1,4 +1,5 @@
-#새로운 클래스인 Person 파일추가
+package com.market.member;
+
 public class Person {
 	private String name;
 	private int phone;
